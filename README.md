@@ -1,59 +1,169 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Código fonte desenvolvido na aulas: [Acessar as aulas](https://www.youtube.com/watch?v=ButD2QVZprE&list=PLmY5AEiqDWwB29FbhTfTh86Zr0yjeFBwO).<br>
+Como criar um CRUD com Laravel 12 e Tailwind, ou seja, cadastrar, listar, editar e apagar.<br>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Requisitos
 
-## About Laravel
+* PHP 8.2 ou superior - Conferir a versão: php -v
+* Composer - Conferir a instalação: composer --version
+* Node.js 22 ou superior - Conferir a versão: node -v
+* GIT - Conferir a instalação: git -v
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Como rodar o projeto baixado
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Baixar os arquivos do GitHub.
+```
+git clone <repositorio_url> .
+```
+```
+git clone https://github.com/celkecursos/tutorial-como-usar-laravel-12.git .
+```
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Duplicar o arquivo ".env.example" e renomear para ".env".
 
-## Learning Laravel
+Alterar no arquivo .env as credenciais do banco de dados.
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=nome_do_banco_de_dados
+DB_USERNAME=usuario_do_banco_de_dados
+DB_PASSWORD=senha_do_usuario_do_banco_de_dados
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+Instalar as dependências do PHP
+```
+composer install
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Instalar as dependências do Node.js.
+```
+npm install
+```
 
-## Laravel Sponsors
+Gerar a chave para o arquivo .env.
+```
+php artisan key:generate
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Executar as migration para criar a base de dados e as tabelas.
+```
+php artisan migrate
+```
 
-### Premium Partners
+Iniciar o projeto criado com Laravel.
+```
+php artisan serve
+```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+Executar as bibliotecas Node.js.
+```
+npm run dev
+```
 
-## Contributing
+Acessar o conteúdo padrão do Laravel
+```
+http://127.0.0.1:8000
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Sequência para criar o projeto
 
-## Code of Conduct
+Criar o projeto com Laravel
+```
+composer create-project laravel/laravel .
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Iniciar o projeto criado com Laravel.
+```
+php artisan serve
+```
 
-## Security Vulnerabilities
+Acessar o conteúdo padrão do Laravel
+```
+http://127.0.0.1:8000
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Criar a Controller.
+```
+php artisan make:controller NomeController
+```
+```
+php artisan make:controller UserController
+```
 
-## License
+Criar a View.
+```
+php artisan make:view nome
+```
+```
+php artisan make:view users/create
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Executar as migration para criar a base de dados e as tabelas.
+```
+php artisan migrate
+```
+
+Instalar as dependências do Node.js.
+```
+npm install
+```
+
+Executar as bibliotecas Node.js.
+```
+npm run dev
+```
+
+Criar um arquivo Request com validações do formulário.
+```
+php artisan make:request NomeDoRequest
+```
+```
+php artisan make:request UserRequest
+```
+
+Traduzir para português [Módulo pt-BR](https://github.com/lucascudo/laravel-pt-BR-localization).
+
+## Como enviar o projeto para o GitHub.
+
+Inicializar um novo repositorio GIT.
+```
+git init
+```
+
+Adicionar todos os arquivos modificados na área de preparação.
+```
+git add .
+```
+
+Commit registra as alterações feitas nos arquivos que foram adicionados na área de preparação.
+```
+git commit -m "Base do projeto"
+```
+
+Verificar em qual branch está.
+```
+git branch
+```
+
+Renomear a branch atual no GIT para main.
+```
+git branch -M main
+```
+
+Adicionar um repositório remoto ao repositório local.
+```
+git remote add origin https://github.com/celkecursos/tutorial-como-usar-laravel-12.git
+```
+
+Enviar os commits locais para um repositório remoto.
+```
+git push -u origin main
+```
+
+## Autor
+
+Este projeto foi desenvolvido por [Cesar Szpak](https://github.com/cesarszpak) e está hospedado no repositório da organização [Celke](https://github.com/celkecursos).
+
+## Licença
+
+Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE.txt) para mais detalhes.

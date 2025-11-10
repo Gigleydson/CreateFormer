@@ -11,6 +11,7 @@
 }
 
 @layer components {
+
     /* Container principal */
     .main-container {
         @apply flex flex-col h-screen bg-gray-100;
@@ -36,7 +37,7 @@
     .nav-link {
         @apply hover:text-gray-300 transition-colors;
     }
- 
+
     /* Layout da página */
     .content {
         @apply flex-1 px-2 py-6 max-w-6xl mx-auto w-full;
@@ -44,6 +45,10 @@
 
     .content-title {
         @apply flex justify-between items-center mb-6;
+    }
+
+    .content-title span {
+        @apply flex space-x-1;
     }
 
     .page-title {
@@ -60,8 +65,7 @@
     }
 
     .form-input {
-        @apply border p-2 w-full mt-1 rounded-md border-blue-100 shadow-sm focus:border-blue-300
-        focus:ring focus:ring-blue-200 focus:outline-none;
+        @apply border p-2 w-full mt-1 rounded-md border-blue-100 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:outline-none;
     }
 
     /* Tabela */
@@ -98,12 +102,34 @@
     }
 
     .table-actions {
-        @apply py-3 px-6 text-center;
+        @apply py-3 px-6 text-center flex space-x-1;
     }
+
+    /* Detalhes do usuáio */
+    .show-container {
+        @apply bg-white shadow-md rounded-lg p-6;
+    }
+
+    .show-title {
+        @apply text-xl font-semibold mb-6;
+    }
+
+    .show-list {
+        @apply text-gray-700 text-sm;
+    }
+
+    .show-list li {
+        @apply mb-2
+    }
+
+    .show-list span {
+        @apply font-bold
+    }
+
 
     /* Paginação */
     .pagination {
-        @apply mt-2 p-3;
+        @apply mt-5;
     }
 
     /* Botões */
@@ -113,7 +139,7 @@
 
     .btn-info {
         @apply bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors;
-    } 
+    }
 
     .btn-success {
         @apply bg-green-500 text-white p-2 rounded-md cursor-pointer hover:bg-green-600 transition-colors;
