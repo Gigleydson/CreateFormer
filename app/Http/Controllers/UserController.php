@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\UserRequest;
 use App\Models\User;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Exception;
 
 class UserController extends Controller
@@ -125,5 +126,15 @@ class UserController extends Controller
                // Redirecionar o usuário, enviar a mensagem de erro
                return redirect()->route('user.index')->with('success', 'Usuário não excluído');
           }
+     }
+
+     // Gerar PDF
+     public function generatePdf(User $user)
+     {
+          // Carregar informações com HTML/conteúdo e determinar a orientação e o tamanho do arquivo
+          $pdf = Pdf::loadView('users.generatePdf', ['user' => $user])->setPaper('a4', 'portrait');
+
+          // Fazer o download do arquivo
+          return $pdf->download('view_user.pdf');
      }
 }
