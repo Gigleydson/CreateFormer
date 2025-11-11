@@ -12,7 +12,7 @@ class UserController extends Controller
      public function index()
      {
           // Recuperando os registros da base de dados
-          $users = User::orderByDesc('id')->paginate(3);
+          $users = User::orderByDesc('id')->paginate(5);
 
           // Carregar a view
           return view('users.index', ['users' => $users]);
@@ -44,7 +44,7 @@ class UserController extends Controller
                ]);
 
                // Redirecionar o usuário, enviar a mensagem de sucesso
-               return redirect()->route('user.show', ['user' => $user->id])->with('success', 'Usuário cadastrado com sucesso!');
+               return redirect()->route('user.index', ['user' => $user->id])->with('success', 'Usuário cadastrado com sucesso!');
 
           } catch (Exception $e) {
                // Redirecionar o usuário, enviar a mensagem de erro
