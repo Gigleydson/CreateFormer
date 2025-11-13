@@ -9,6 +9,21 @@
 
         <x-alert />
 
+        <form class="form-search">
+            <input class="form-input form-search-input" type="text" name="name" value="{{ $name }}">
+
+            {{-- <input class="form-input form-search-input" type="text" name="email" value="{{ $email }}"> --}}
+
+            <div class="container-search-buttons">
+                <button class="btn-primary" type="submit">
+                    <span>Buscar</span>
+                </button>
+                <a href="{{ route('user.index') }}" class="btn-warning" >
+                    <span>Limpar</span>
+                </a>
+            </div>
+        </form>
+
         <div class="table-container">
             <table class="table">
                 <thead>
@@ -29,14 +44,14 @@
                             <td class="table-actions">
                                 <a href="{{ route('user.show', ['user' => $user->id]) }}" class="btn-info">Viualizar</a>
                                 <a href="{{ route('user.edit', ['user' => $user->id]) }}" class="btn-warning">Editar</a>
-                                <form id="delete-form-{{ $user->id }}" 
+                                <form id="delete-form-{{ $user->id }}"
                                     action="{{ route('user.destroy', ['user' => $user->id]) }}" method="POST">
                                     @csrf
                                     @method('delete')
 
-                                    <button type="button" class="btn-danger" 
-                                    onclick="confirmDelete({{ $user->id }})">Apagar</button>
-                                </form> 
+                                    <button type="button" class="btn-danger"
+                                        onclick="confirmDelete({{ $user->id }})">Apagar</button>
+                                </form>
                             </td>
                         </tr>
                     @empty
@@ -49,7 +64,7 @@
         </div>
 
         <div class="pagination">
-            {{$users->links()}}
+            {{ $users->links() }}
         </div>
     </div>
 @endsection
