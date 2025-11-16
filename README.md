@@ -8,6 +8,7 @@ Como criar um CRUD com Laravel 12 e Tailwind, ou seja, cadastrar, listar, editar
 * Node.js 22 ou superior - Conferir a versão: node -v
 * GIT - Conferir a instalação: git -v
 
+
 ## Como rodar o projeto baixado
 
 Baixar os arquivos do GitHub.
