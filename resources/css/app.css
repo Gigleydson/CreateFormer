@@ -1,0 +1,177 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+@layer components {
+
+    /* Container principal */
+    .main-container {
+        @apply flex flex-col min-h-screen bg-gray-100;
+    }
+
+    /* Header */
+    .header {
+        @apply bg-blue-700 text-white p-4 w-full
+    }
+
+    .content-header {
+        @apply max-w-6xl mx-auto flex items-center;
+    }
+
+    .title-logo {
+        @apply text-xl font-bold;
+    }
+
+    .list-nav-link {
+        @apply flex space-x-6 ml-6;
+    }
+
+    .nav-link {
+        @apply hover:text-gray-300 transition-colors;
+    }
+
+    /* Layout da página */
+    .content {
+        @apply flex-1 px-2 py-6 max-w-6xl mx-auto w-full;
+    }
+
+    .content-title {
+        @apply flex justify-between items-center mb-6;
+    }
+
+    .content-title span {
+        @apply flex space-x-1;
+    }
+
+    .page-title {
+        @apply text-2xl;
+    }
+
+    /* Formulário de busca */
+    .form-search {
+        @apply mb-5 grid xl:grid-cols-5 md:grid-cols-2 gap-2 items-end;
+    }
+
+    .form-search-input {
+        @apply bg-white;
+    }
+
+    .container-search-buttons {
+        @apply flex gap-1;
+    }
+
+    /* Formulário */
+    .form-container {
+        @apply mt-6 bg-white shadow-md rounded-lg p-6;
+    }
+
+    .form-label {
+        @apply block text-sm font-semibold;
+    }
+
+    .form-input {
+        @apply border p-2 w-full mt-1 rounded-md border-blue-100 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:outline-none;
+    }
+
+    /* Tabela */
+    .table-container {
+        @apply overflow-y-auto shadow-md rounded-lg;
+    }
+
+    .table {
+        @apply bg-white min-w-full border-collapse w-full;
+    }
+
+    .table-header {
+        @apply bg-blue-400 text-white uppercase text-sm leading-normal;
+    }
+
+    .table-header th {
+        @apply py-3 px-6 text-left;
+    }
+
+    .table-header .center {
+        @apply text-center;
+    }
+
+    .table-body {
+        @apply text-gray-700 text-sm font-light;
+    }
+
+    .table-row {
+        @apply border-b border-gray-200 hover:bg-blue-50 transition last:border-0;
+    }
+
+    .table-cell {
+        @apply py-4 px-6;
+    }
+
+    .table-actions {
+        @apply py-3 px-6 flex justify-center space-x-1;
+    }
+
+    /* Detalhes do usuáio */
+    .show-container {
+        @apply bg-white shadow-md rounded-lg p-6;
+    }
+
+    .show-title {
+        @apply text-xl font-semibold mb-6;
+    }
+
+    .show-list {
+        @apply text-gray-700 text-sm;
+    }
+
+    .show-list li {
+        @apply mb-2
+    }
+
+    .show-list span {
+        @apply font-bold
+    }
+
+
+    /* Paginação */
+    .pagination {
+        @apply mt-5;
+    }
+
+    /* Botões */
+    .btn-primary {
+        @apply bg-cyan-500 text-white p-2 rounded-md cursor-pointer hover:bg-cyan-600 transition-colors;
+    }
+
+    .btn-info {
+        @apply bg-blue-500 text-white p-2 rounded-md cursor-pointer hover:bg-blue-600 transition-colors;
+    }
+
+    .btn-success {
+        @apply bg-green-500 text-white p-2 rounded-md cursor-pointer hover:bg-green-600 transition-colors;
+    }
+
+    .btn-warning {
+        @apply bg-yellow-500 text-white p-2 rounded-md cursor-pointer hover:bg-yellow-600 transition-colors;
+    }
+
+    .btn-danger {
+        @apply bg-red-500 text-white p-2 rounded-md cursor-pointer hover:bg-red-600 transition-colors;
+    }
+
+    /* Alertas */
+    .alert-success {
+        @apply p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-200 dark:bg-gray-800 dark:text-green-400;
+    }
+
+    .alert-error {
+        @apply p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-200 dark:bg-gray-800 dark:text-red-400;
+    }
+}
